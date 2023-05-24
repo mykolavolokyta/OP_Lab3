@@ -23,6 +23,14 @@ void LinkedList::insert(std::string _key, std::string _value) {
 	temp->next = new_node;
 }
 
+pNode LinkedList::search(std::string _key) {
+	pNode current = this->head;
+	while (current != nullptr && current->key != _key) {
+		current = current->next;
+	}
+	return current;
+}
+
 std::ostream& operator<<(std::ostream& out, const LinkedList& list) {
 	pNode temp = list.head;
 	while (temp != nullptr) {

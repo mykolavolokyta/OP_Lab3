@@ -20,5 +20,6 @@ public:
 	LinkedList(const LinkedList&);
 
 	void insert(std::string, std::string);
+	pNode search(std::string);
 	friend std::ostream& operator<<(std::ostream&, const LinkedList&);
 };
