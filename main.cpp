@@ -1,5 +1,16 @@
 #include <iostream>
+#include "LinkedList.h"
 
 int main() {
+	LinkedList list;
+	list.insert("hello", "bebra");
+	list.insert("hello1", "bebra1");
+	list.insert("hello2", "bebra2");
+
+
+	LinkedList list1 = list;
+	list1.insert("Mister", "Bingus");
+
+	std::cout << list << "\n\n" << list1;
 	return 0;
 }
