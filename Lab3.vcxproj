@@ -127,12 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Handler.cpp" />
     <ClCompile Include="HashTable.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Reader.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Handler.h" />
     <ClInclude Include="HashTable.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="LinkedList.h" />

@@ -1,29 +1,26 @@
 #include <iostream>
 #include <exception>
+#include <string>
 #include "Item.h"
 #include "HashTable.h"
 #include "Reader.h"
+#include "Handler.h"
 
 int main() {
 	
 	try {
 		Reader reader("D:/Study/OP/examples/Lab3/dict_processed.txt");
 		auto lines = reader.read();
-		for (auto line : lines) {
-			std::cout << line << '\n';
+		HashTable table;
+		for (auto& line : lines) {
+			Handler handler(line);
+			auto item = handler.get_item();
+			table.insert(item);
 		}
 
-		HashTable h;
-		Item i("hello", "bebra");
-		h.insert(i);
-		std::string key = "hello";
-		auto result = h.search(key);
-		if (result) {
-			std::cout << key << ": " << result->data.get_value();
-		}
-		else {
-			std::cout << key << ": [EMPTY]";
-		}
+		std::cout << "Type a sentence to get definition: ";
+		std::string input;
+		std::getline(std::cin, input);
 	}
 	catch (std::exception& exception) {
 		std::cout << exception.what();

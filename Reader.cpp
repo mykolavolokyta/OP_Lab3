@@ -13,7 +13,8 @@ std::vector<std::string> Reader::read() const {
 	std::vector<std::string> lines;
 	std::string line;
 	while (std::getline(in, line)) {
-		lines.push_back(line);
+		
+		if (line != "") lines.push_back(line);
 	}
 	return lines;
 
