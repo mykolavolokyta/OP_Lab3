@@ -10,6 +10,6 @@ public:
 	HashTable();
 
 	int hash(std::string);
-	void insert(std::string, std::string);
+	void insert(const Item&);
 	pNode search(std::string);
 };

@@ -1,13 +1,16 @@
 #include <iostream>
+#include "Item.h"
 #include "HashTable.h"
 
 int main() {
+	
 	HashTable h;
-	h.insert("hello", "bebra");
+	Item i("hello", "bebra");
+	h.insert(i);
 	std::string key = "hello";
 	auto result = h.search(key);
 	if (result) {
-		std::cout << key << ": " << result->value;
+		std::cout << key << ": " << result->data.get_value();
 	}
 	else {
 		std::cout << key << ": [EMPTY]";

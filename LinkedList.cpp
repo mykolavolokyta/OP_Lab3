@@ -1,17 +1,18 @@
 #include "LinkedList.h"
+#include "Item.h"
 
 LinkedList::LinkedList() : head(nullptr) {}
 
 LinkedList::LinkedList(const LinkedList& list) {
 	pNode current = list.head;
 	while (current != nullptr) {
-		this->insert(current->key, current->value);
+		this->insert(current->data);
 		current = current->next;
 	}
 }
 
-void LinkedList::insert(std::string _key, std::string _value) {
-	pNode new_node = new Node(_key, _value);
+void LinkedList::insert(const Item& item) {
+	pNode new_node = new Node(item);
 	if (this->head == nullptr) {
 		this->head = new_node;
 		return;
@@ -25,7 +26,7 @@ void LinkedList::insert(std::string _key, std::string _value) {
 
 pNode LinkedList::search(std::string _key) {
 	pNode current = this->head;
-	while (current != nullptr && current->key != _key) {
+	while (current != nullptr && current->data.get_key() != _key) {
 		current = current->next;
 	}
 	return current;
@@ -34,7 +35,7 @@ pNode LinkedList::search(std::string _key) {
 std::ostream& operator<<(std::ostream& out, const LinkedList& list) {
 	pNode temp = list.head;
 	while (temp != nullptr) {
-		out << temp->key << ' ' << temp->value << '\n';
+		out << temp->data.get_key() << ' ' << temp->data.get_value() << '\n';
 		temp = temp->next;
 	}
 	return out;

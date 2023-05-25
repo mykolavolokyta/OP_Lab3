@@ -1,4 +1,5 @@
 #include "HashTable.h"
+#include "Item.h"
 #include <cmath>
 
 HashTable::HashTable() : count(0), size(100), table(new LinkedList[size]) {}
@@ -11,9 +12,9 @@ int HashTable::hash(std::string _key) {
     return abs(hashCode % this->size);
 }
 
-void HashTable::insert(std::string _key, std::string _value) {
-    int index = hash(_key);
-    table[index].insert(_key, _value);
+void HashTable::insert(const Item& item) {
+    int index = hash(item.get_key());
+    table[index].insert(item);
 }
 
 pNode HashTable::search(std::string _key) {

@@ -1,15 +1,15 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "Item.h"
 
 struct Node;
 typedef Node* pNode;
 
 struct Node {
-	std::string key;
-	std::string value;
+	Item data;
 	pNode next;
-	Node(std::string _key, std::string _value) : key(_key), value(_value), next(nullptr) {}
+	Node(const Item& _data) : data(_data), next(nullptr) {}
 };
 
 
@@ -19,7 +19,7 @@ public:
 	LinkedList();
 	LinkedList(const LinkedList&);
 
-	void insert(std::string, std::string);
+	void insert(const Item&);
 	pNode search(std::string);
 	friend std::ostream& operator<<(std::ostream&, const LinkedList&);
 };
