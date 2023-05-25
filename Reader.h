@@ -8,4 +8,5 @@ class Reader {
 public:
 	Reader(std::string);
 	std::vector<std::string> read() const;
+	~Reader();
 };

@@ -17,5 +17,6 @@ std::vector<std::string> Reader::read() const {
 		if (line != "") lines.push_back(line);
 	}
 	return lines;
-
 }
+
+Reader::~Reader() {}

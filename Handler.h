@@ -9,4 +9,6 @@ public:
 	Handler(std::string);
 
 	Item get_item() const;
+
+	~Handler();
 };

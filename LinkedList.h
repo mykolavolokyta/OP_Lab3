@@ -22,4 +22,6 @@ public:
 	void insert(const Item&);
 	pNode search(std::string);
 	friend std::ostream& operator<<(std::ostream&, const LinkedList&);
+
+	~LinkedList();
 };

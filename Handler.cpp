@@ -12,3 +12,5 @@ Item Handler::get_item() const {
 	std::string definition = row.substr(pos + 1);
 	return Item(word, definition);
 }
+
+Handler::~Handler() {}

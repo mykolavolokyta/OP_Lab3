@@ -40,3 +40,13 @@ std::ostream& operator<<(std::ostream& out, const LinkedList& list) {
 	}
 	return out;
 }
+
+LinkedList::~LinkedList() {
+	pNode current = head;
+	while (current) {
+		pNode next = current->next;
+		delete current;
+		current = next;
+	}
+	head = nullptr;
+}

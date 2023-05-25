@@ -2,7 +2,7 @@
 #include "Item.h"
 #include <cmath>
 
-HashTable::HashTable() : count(0), size(100), table(new LinkedList[size]) {}
+HashTable::HashTable() : count(0), size(100000), table(new LinkedList[size]) {}
 
 int HashTable::hash(std::string _key) {
     int hashCode = 0;
@@ -20,4 +20,8 @@ void HashTable::insert(const Item& item) {
 pNode HashTable::search(std::string _key) {
     int index = hash(_key);
     return table[index].search(_key);
+}
+
+HashTable::~HashTable() {
+    delete[] table;
 }

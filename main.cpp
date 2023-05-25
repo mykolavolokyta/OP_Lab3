@@ -5,6 +5,7 @@
 #include "HashTable.h"
 #include "Reader.h"
 #include "Handler.h"
+#include "Sentence.h"
 
 int main() {
 	
@@ -21,6 +22,17 @@ int main() {
 		std::cout << "Type a sentence to get definition: ";
 		std::string input;
 		std::getline(std::cin, input);
+		Sentence sentence(input);
+		auto words = sentence.get_words();
+		for (auto& word : words) {
+			pNode result = table.search(word);
+			if (result) {
+				std::cout << word << ": " << result->data.get_value() << "\n\n";
+			}
+			else {
+				std::cout << word << ": [NO DEFINITION]" << "\n\n";
+			}
+		}
 	}
 	catch (std::exception& exception) {
 		std::cout << exception.what();

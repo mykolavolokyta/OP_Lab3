@@ -8,4 +8,5 @@ public:
 	Item(const Item& item) :key(item.get_key()), value(item.get_value()) {}
 	std::string get_key() const { return key; }
 	std::string get_value() const { return value; }
+	~Item() {}
 };

@@ -12,4 +12,6 @@ public:
 	int hash(std::string);
 	void insert(const Item&);
 	pNode search(std::string);
+
+	~HashTable();
 };

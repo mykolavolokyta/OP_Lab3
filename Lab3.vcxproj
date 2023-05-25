@@ -132,6 +132,7 @@
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Reader.cpp" />
+    <ClCompile Include="Sentence.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Handler.h" />
@@ -139,6 +140,7 @@
     <ClInclude Include="Item.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="Reader.h" />
+    <ClInclude Include="Sentence.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
